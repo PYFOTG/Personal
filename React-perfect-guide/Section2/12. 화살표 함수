@@ -1,0 +1,71 @@
+1. 화살표 함수
+  - 자바스크립트 함수를 생성하는 또 다른 구문(문법이라는 소리죠? 문법 싫어!ㅜㅜ)
+  
+  1) 일반적 자바스크립트 함수
+
+     function myFnc(){
+      ...
+     }
+     
+    - var myFuc() = function 이라는 구문
+   
+   (*) 일반적 자바스크립트 함수 예시
+   
+     fuction printMyName(name){
+       console.log(name)
+     }
+     
+     printMyName('Max');
+     
+     결과) "Max"
+     
+     - ()안에 변수를 넣는것 = console.log()함수에 인수로 name을 전달
+     - printMyName이라는 const(or let)로 저장하고 + 인수와 함수의 본문 사이에 화살표 넣기 = 화살표 함수
+   
+  2) 화살표 함수
+   
+    const myFuc = () => {
+     ...
+    }
+    
+    - const가 선언되고, 오른쪽에 등호(=)가 있음
+    - 인수 목록은 비어있지만, 몇몇 인수들을 가질수도 있음
+    - 화살표가 있음
+    - function을 생략했기 때문에 일반적인 함수보다 길이가 짧음
+    - this로 인해 발생하는 문제를 해결해줌!(this 키워드가 항상 원하는 객체를 참조하지 않는다는 문제점)
+    - 그런데 화살표 함수 안에 this를 사용하면, 항상 정의한 객체를 나타내고 & 실행중에 갑자기 바뀌지 않음 !!
+    
+    (1) 화살표 함수 문법
+      - 함수명을 const or let로 저장 + 인수와 함수의 본문 사이에 화살표 넣기 = 화살표 함수
+      - 만약 () 안의 인자를 딱 하나만! 받는다면 'const printMyName = name => { 내용 }' 과 같이 인자 부분의 괄호를 생략할 수 있음
+      - 인자가 없는 함수의 경우 빈 괄호쌍 ()을 입력해야 문법이 성립함
+      - 인자가 다수인 함수의 경우 괄호쌍 안에 쉼표로 구분 (name, age)해서 전달 + 출력 함수에 인수 모두 전달
+      
+      - 
+    
+    (*) 화살표 함수 예시 1
+    
+      const printMyName = (name) => {
+       console.log(name)
+     }
+     
+     printMyName('Max');
+     
+     결과) "Max"
+     
+      - printMyName이라는 const(or let)로 저장하고 + 인수와 함수의 본문 사이에 화살표 넣기 = 화살표 함수
+      
+    (*) 화살표 함수 예시 2
+    
+      const multiply = (number) => {
+        return number * 2;
+      }
+      
+      console.log(multiply(2))
+      
+      결과) 4
+      
+      const multiply = number => number * 2;
+      console.log(multiply(2))
+      
+      결과) 4
