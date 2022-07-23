@@ -1,0 +1,41 @@
+1. 변수 "let"과 "const" 이해하기
+  - var은 자바스크립트에서 변수를 생성함.
+  - 몇 몇 변수들은 절대 변하지 않음 = 이것을 상수라 부르자!
+  - 상수는 엄밀히 따지면 변수이지만, 자바스크립트에선 var 이라는 변수만 있지롱!
+  - 자바스크립트 ES6부터 let과 const가 있음!! 이 때 부터는 let과 const를 사용하는것이 권장됨!
+  - var은 거의 사용되지 않음
+  
+  1) let
+    - 새로운 var이라 생각하자!
+    - 변수의 선언에 사용된다!
+    - 변수의 범위를 변경한다!
+    
+    >> let은 값을 수정할 수 있는 변수를 선언할 때 사용
+    
+  2) const
+    - 변수의 선언에 사용된다!
+    - 변수의 범위를 변경한다!
+    - const는 새로운 값을 할당할 수 없다!
+    - 새로운 값을 할당할 경우 에러 발생!
+    
+    >> const는 한 번 지정하면 절대 변하지 않는 값인 상수를 선언할 때 사용
+    
+  ex) var 예시
+    var maName = 'Max';
+    console.log(myName);
+    
+    myName = 'manu';
+    console.log(myName);
+    
+    >> 결과: "Max"
+            "Manu"
+
+  ex) const 예시
+    const maName = 'Max';
+    console.log(myName);
+    
+    myName = 'manu';
+    console.log(myName);
+    
+    >> 결과: "Max"
+            "TypeError:~~"
