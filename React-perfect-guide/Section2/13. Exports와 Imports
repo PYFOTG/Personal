@@ -1,1 +1,77 @@
+1. Exports & Imports(Modules)
+  1) 차세대 Java Script의 특징
+    - 모듈방식의 코드를 작성할 수 있는 기능이 있어 여러 파일로 코드 분리가 가능 !!
+    - 코드를 여러 파일로 나눈 뒤 Html파일에 올바른 순서로 코드를 가져오면 ... 굴러간당 !!
+    - 모듈은 자바스크립트 파일 안에 있음
+    - (특별한 키워드를 사용해) 다른 파일에서 컨텐츠를 불러올 수 있음
+    - (특별한 키워드를 사용해) 객체를 내보낼 수 있음
 
+    예시) 한 객체를 export하는 파일
+      (파일) person.js
+        const person = {
+          name: 'Max'
+        }
+
+        export default person
+
+        : export를 사용해 default 키워드를 사용해 person 객체를 내보냄.
+        내보낸 객체를 import문을 사용해 불러올 수 있음
+  
+    예시) 여러 객체를 export하는 파일
+      (파일) utility.js
+        export const clean = () => {
+          ...
+        }
+        
+        export const baseData = 10;
+        
+        : 상수형 clean에 함수가 들어있고, baseData에는 숫자가 들어있음.
+        : 여기서 내보낸 객체를 가져오기 위해선 import문이 필요함
+    
+    예시) export한 객체를 import하는 파일
+      (파일) app.js
+        import person from './person.js'
+        import prs from './person.js'
+        
+        import(baseData) from './utility.js'
+        import(clean) from './utillity.js'
+        
+        (person.js파일 import한 부분)
+        : default로 const person을 가져옴
+        : person.js에서 person을 import하면 원하는대로 객체의 이름을 정할 수 있음
+        > import person from './person.js' OR import prs form './person.js' 둘 다 상관 없음 같은뜻임
+        : 언제나 default로 표시한 것을 참조함
+        
+        (utillity.js파일 import한 부분)
+        : app.js에선 두 개의 상수를 불러오므로, 해당 파일에서 특정한 것을 정확하게 가리키기 위해 중괄호{}를 사용함
+        : 이름으로 어떤것을 불러오는것을, import { 이름 }을 named export라고 함.
+        : utility.js에서 어떤 객체도 default로 저장하지 않았기에 무엇을 가리키는지 자바스크립트가 알게하기 위해 named export를 사용함
+        : import문에 콤마를 넣어 {baseData, clean} OR {clean, baseData}라고 한 문장으로 작성해도 됨
+
+2. export
+  1) export문
+    - 9번, 20번 줄 예시 참조
+    
+  2) default문
+    - default는 파일에서 어떤것을 가져오면 항상 default export가 내보낸 것을 기본값으로 가져옴
+    
+3. Import
+  1) import문
+    - 31번 줄 예시 참조
+    
+  2) import 시 default export VS named export
+    (1) default export
+      - 31번 줄 app.js 예시에서처럼 person으로 불러오든, prs로 불러오든 상관 없음
+      
+    (2) named export
+      - 31번 줄 app.js 참조
+      - 파일 안에서 정의된 정확한 이름을 export 키워드와 함께 사용해야 함 !!
+      - import하는 파일에서 as 키워드를 써서 자유롭게 선택할 수 있는 별칭 할당 가능
+        > import {smith as Smth} from './utiltiy.js'
+      - 파일에 다수의 named export가 있는 경우, 특수문자 *를 사용해 모든것을 import할 수 있음
+      - import * as bundled 구문을 사용함
+        > import * as bundled from './utility.js'
+      - 모든 상수로 된 자바스크립트 객체를 가지고 옴.
+      - 다른 파일에서 프로퍼티로 내보내는 것이 무엇이든, export하는것에 접근하기 위해서는 bundled.baseData OR bundled.clean과 같이 사용함
+      - import {} from './~.~'가 가장 많이 사용되는 문법임.
+      
