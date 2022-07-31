@@ -1,0 +1,67 @@
+1. Class/ Property/ Method 간단 요약
+  1) Property
+    - 클래스와 객체에 추가되는 변수같은 것
+      
+  *) this 구문
+    - Property와 생성자함수를 설정함 (이번 차수 강의)
+
+    (1) 최신구문에서 바뀐것
+      - 차세대 JS임 (생성자함수 사용 = ES6 // 바로 할당 = ES7)
+      - class에 바로 property를 할당할 수 있음 !!
+      - myProperty = 'value'의 형태
+      
+    (예시)
+      ES6)
+        constructor() { 
+          this.myProperty = 'value';
+        }
+        
+      ES7)
+        myProperty = 'value';
+
+  2) Method
+    - 클래스와 객체에 추가되는 함수같은 것
+    - 값으로 함수를 저장하는 Property
+    
+    (1) 최신구문에서 바뀐것
+      - Property의 값으로 화살표 함수를 사용하기 때문에 this 키워드를 사용하지 않아도 됨 !!
+    
+    (예시)
+      ES6)
+        myMethod() {...}
+        
+      ES7)
+        myMethod = () => {...}
+
+2. 바뀐 문법 예시
+  이전 문법)
+    class Human {
+        gender = 'male'; // Property
+      }
+      printGender = () => {
+        console.log(this.gender); // Method
+      }
+    }
+    
+    class Person extends Human {
+    // extend 키워드를 사용해 human 클래스를 상속받아 확장할 수 있음
+        name = 'Max';
+        gender = 'female';
+      }
+      // Method 추가
+      printMyName = () => {
+        // 위에서 생성한 this.name을 Property로 전달
+        console.log(this.name);
+      }
+    }
+    
+    // 위 클래스를 new Person()메소드를 사용해 상수 person에 저장
+    const person = new Person();
+    person.printMyName();
+    person.printGender();
+    
+3. 세 줄 요약 !!
+  1) constructor() 안쓴다 !!
+  2) constructor() 위치에서 this 키워드 안 쓰고 Property = 'value'; 형태로 선언한다 !!
+     (= class에 바로 property 선언)
+  3) Property의 값으로 화살표 함수를 사용한다 !!
