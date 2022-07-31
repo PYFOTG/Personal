@@ -1,1 +1,70 @@
-1. 
+1. Classes
+  - React에서 컴포넌트를 생성할 때 사용 
+  - 객체를 위한 청사진의 역할
+  - Property와 Method를 가질 수 있음
+  - Property는 클래스에 정의한 변수
+  - Method는 클래스에 정의한 함수
+  
+  - 생성자함수와 유사하다
+  - new 키워드로 클래스의 인스턴스를 생성한다
+  
+  - 상속은 prototype과 유사하다
+  - 상속이 가능하다(= 다른 클래스에 있는 Property & Method를 상속하면 잠재적으로 새로운 P & M을 추가한다.)
+  
+  1) Classes 예시
+    class Person {
+      name = 'Max'       // Property 부분(name)
+      call = () => {...} // Method 부분
+    }
+    
+  2) Class의 인스턴스 생성 예시
+    const myPerson = new Person()
+      myPerson.call()
+    console.log(myPerson.name)
+    
+  3) Class 상속의 예시
+    class Person extends Master
+    
+  
+2. Prototype
+  - 상속과 유사함 
+  - consteructor() {} 의 구조에서, 어떤 클래스에도 추가해 클리스의 객체를 생성할때마다 실행할 메소드를 만들 수 있음
+  - Method는 Method의 이름 다음에 중괄호를 넣어서 만들 수 있음
+  - this. 키워드로 Property를 설정할 수 있음
+  
+  - class는 extend 키워드를 사용하여 다른 class를 상속받아 확장할 수 있음
+  
+  - 서브클래스에서는(다른 클래스를 확장하고 생성자를 실행하는 경우) super 생성자를 먼저 호출해야 함
+
+  1) Prototype 예시
+    
+    class Human {
+      constructor() {
+        this.hender = 'male'; // Property
+      }
+      printGender() {
+        console.log(this.gender); // Method
+      }
+    }
+    
+    class Person extends Human {
+    // extend 키워드를 사용해 human 클래스를 상속받아 확장할 수 있음
+      constructor() {
+        // 상위클래스의 생성자함수를 실행하는 키워드 super 
+        super();
+        // 가장 간단한 Property의 형태
+        // 기본적인 함수
+        // this 키워드로 Property를 설정
+        this.name = 'Max';
+      }
+      // Method 추가
+      printMyName() {
+        // 위에서 생성한 this.name을 Property로 전달
+        console.log(this.name);
+      }
+    }
+    
+    // 위 클래스를 new Person()메소드를 사용해 상수 person에 저장
+    const person = new Person();
+    person.printMyName();
+    person.printGender();
