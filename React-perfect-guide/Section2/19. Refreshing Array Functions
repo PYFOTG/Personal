@@ -1,0 +1,17 @@
+1. 배열 관련 함수(Array Function)
+  : 기본 자바스크립트에 들어있는 애들임.
+
+    1) map 메소드
+      : 예전 값을 새 값으로 반환함
+      
+      예시)
+        const numbers = [1, 2, 3];
+
+        const doublNumArray = numbers.map((num) => {
+          // 여기 있는 모든 원소들의 값이 두 배가 되는 배열
+          // 화살표 함수도 되고 일반 함수도 됨
+          return num * 2;
+        });
+        
+        console.log(numbers); // [1 ,2, 3]
+        console.log(doublNumArray); // [2, 4, 6]
