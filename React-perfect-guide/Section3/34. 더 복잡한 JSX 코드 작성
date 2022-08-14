@@ -1,0 +1,14 @@
+1. React 컴포넌트의 중요 규칙
+  1)✨ 변환하는 컴포넌트 안의 html파일(= JSX코드)의 주요 규칙✨
+    -✨ 반환하는 문장 혹은 JSX조각마다 하나의 루트 요소를 가져야함 ✨
+    -✨ 방법1: 또 다른 <div/> 태그로 앞쪽+뒤쪽을 감싸줌 // 제일 간단한 방법
+    (방법1)
+      function ExpenseItem() {
+        return <div>
+          <div>Date</div>
+          <div>
+            <h2>Title</h2>
+            <div>Amount</div>
+          </div>
+        </div>
+        
