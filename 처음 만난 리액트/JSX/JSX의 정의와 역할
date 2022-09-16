@@ -1,0 +1,21 @@
+1. JSX란?
+  - 자바스크립트 확장 문법
+  - javascript + xml/html
+  - jsx 코드 예제
+    ex) const element = <h1>Hello, world!</h1>;
+        h1 문자열을 element에 저장함.
+  
+  1) jsx의 역할
+    - 내부적으로 xml/html을 javascript로 변환하는 과정을 거침
+    - jsx 코드를 javascript 코드로 변환하는 역할 = React의 createElement !!!
+  
+  2) react.createElement
+    - createElement 내부에 필요한 파라미터
+      React.createElement (
+        type,
+        [props],
+        [...children]
+      )
+  
+  - react에선 React.createElement를 이용해 jsx 코드를 사용하고 있음
+  - jsx를 사용하면 장점이 많고 편리함
