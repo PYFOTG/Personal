@@ -1,0 +1,17 @@
+1. Element란 무엇인가
+  - 어떤 물체를 구성하는 성분
+  - react 앱을 구성하는 요소! 정도로 생각하면 될듯?
+  - elements are the smallest building block of react apps.
+  - 리액트 앱을 구성하는 가장 작은 요소들
+  
+2. DOM Elements VS React Elements
+  - 리액트 엘리먼트는 돔 엘리먼트의 가상표현
+  - 돔 엘리먼튼 상대적으로 많은 정보를 담고있기 때문에 크고 무거운 편
+
+3. React Elements는 화면에서 보이는 것들을 기술
+
+4. Elements의 생김새
+  - 리액트 앨리먼트는 자바스크립트 객체 형태로 존재함!!
+  - 불변이라는 특징을 가짐!
+  - props는 속성 !
+  
