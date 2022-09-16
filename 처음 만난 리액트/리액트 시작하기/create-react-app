@@ -1,0 +1,9 @@
+1. create-react-app(cra)
+  - 리액트를 사용할 때 필요한 모든 내용을 가진 상태로 프로젝트 시작할 때 사용
+  
+  1) 사용법
+    - npx create-react-app project_name
+  
+  2) 용어
+    - cd: 경로 변경
+    - npm start: 어플리케이션 실행
