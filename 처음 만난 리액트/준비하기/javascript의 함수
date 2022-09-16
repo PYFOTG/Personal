@@ -1,0 +1,15 @@
+1. 함수
+  - 파라미터
+  - 인자
+  
+  1) function statement를 사용 예시
+    function sum(a, b) {
+      return a+b;
+    }
+  2) arrow function expression을 사용 예시
+    const multiply = (a, b) => {
+      return a*b;
+    }
+    
+    console.log(multiply(10, 20));
+    // result= 200
