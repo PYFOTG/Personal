@@ -1,0 +1,45 @@
+1. JSX의 장점
+  1) 코드가 간결해짐
+    - jsx 사용
+      <div>Hello, {name}</div>
+    - jsx 사용 안 함
+      React.createElement('div', null, `Hello, ${name});
+    
+  2) 가독성이 향상됨
+  3) injection Attacks 방어
+  
+2. JSX 사용법
+  1) javascript 코드 + xml/html 코드 섞어서 사용하면 됨!
+    - ex) const name = '방구';
+          const element = <h1> 나의, {name} </h>;
+          // 위 내용처럼 html과 javascript 섞인 형태로 사용하면 됨~
+          
+          ReactDOM.render(
+            element,
+            document.getElementtById('root')
+          );
+          
+       ex) funcion getGreeting(user) {
+            if(user) {
+              return <h1>Hello, {formatName(user)}!</h1>;
+            }
+            return <h1>Hello, Stranger.</h1>
+           }
+       
+    - xml/html 코드를 사용하다가 javascript 코드를 사용하고싶다면 {} 사이에
+      자바스크립트 코드(변수 혹은 함수)를 넣어주면 됨~
+    
+  2) 태그의 속성에 값을 넣는 방법
+    (1) 큰따옴표 사이에 문자열을 넣거나
+      const element = <div tabIndex='0'></div>;
+      
+    (2) 중괄호 사이에 자바스크립트 코드를 넣으면 됨
+      const element = <img src={user.avatarUrl}></img>
+    
+  3) 자식을 정의하는 방법
+    ex) const element = (
+          <div>
+            <h1> 안녕하세요</h1>
+            <h2> 열심히 방구껴봅시다!</h2>
+          </div>
+        );
