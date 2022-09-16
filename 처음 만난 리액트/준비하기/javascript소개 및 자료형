@@ -1,0 +1,4 @@
+1. Javascript
+  - 동적 타이핑 방식으로 진행됨 (자료가 실행 될 때를 기준으로 모든게 결정됨)
+  - 변수의 선언 시 var/let을 사용함
+  - 자료형의 종류: number/ string/ boolean/ null/ undefined/ array/ object
