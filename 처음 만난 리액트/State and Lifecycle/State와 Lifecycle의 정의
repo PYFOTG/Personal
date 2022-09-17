@@ -1,0 +1,58 @@
+- 주로 Class Component 와 관련된 내용!
+
+1. State
+  - 상태!
+  - 리액트 컴포넌트의 상태를 의미함!
+  - 더 자세히는 리액트 컴포넌트의 변경 가능한 데이터를 의미!
+  
+  - 렌더링/데이터 흐름에 사용되는 값만 state에 포함시켜야 함!
+    ㄴ state가 변경 될 경우 컴포넌트가 재렌더링 되기 때문! 필요 없는 애를 여기 넣으면 쓸데없이 재 렌더링되어 성능이 떨어지겠지요?
+    ㄴ 관련 없는 값은 컴포넌트의 instance 값으로 정의하면 된다~
+    
+  - state는 javascript 객체이다
+  
+  - 클래스 컴포넌트 예제)
+    class LikeButton extends React.Component {
+      constructor(props) {
+      // 생성자. 클래스가 생성될 때 실행되는 함. 모든 클래스 컴포넌트는 constructor 함수를 갖고있음
+        super(props);
+        
+        this.state = {
+          like: false
+        };
+        // 현재 컴포넌트의 state를 정의하는 부분
+      }
+      ...
+    }
+  
+  - 클래스 컴포넌트 = state를 생성자(construct)에서 정의함
+  - 함수 컴포넌트 = state를 usestate라는 Hook을 통해 정의함
+  
+  - state는 직접 수정할 수 없음(정확히 말하자면! 하면 안돼!!!!)
+    * state를 직접 수정하는 경우 (잘못된 방법)
+      this.state = {
+        name : 'Inje'
+      }
+    * setState 함수를 통한 수정(정상적인 방법))
+      this.serState({
+        name : 'Inje'
+      });
+
+2. Lifecycle
+  - 생명주기
+  - 리액트 컴포넌트의 생명주기
+
+  1) 출생
+    - Mounting
+      - 컴포넌트가 생성되는 시점
+      - constructor(생성자)가 실행됨
+      - 생성자에서 컴포넌트의 state를 정의함
+      - 컴포넌트가 렌더링 됨
+      - 이후 컴포넌트 did rendering 함수가 실행됨
+      - 
+  
+  2) 인생
+    - Updating
+    
+  3) 사망
+    - Unmounting
