@@ -1,0 +1,26 @@
+1. Props의 특징
+  1) Read-Only(읽기 전용)
+    - 값을 변경할 수 없음
+    - 프롭스의 값은 리액트 컴포넌트가 엘리먼트를 생성하기 위해 사용하는 값임
+      - 근데 얘가 엘리먼트 생성 도중 바껴버린다면... 어쩌라고가 되겠지요?
+      - 다 구워진 팥붕은 슈붕이 될 수 없어.
+    
+    - 따라서, 다른 Props의 값으로 Element를 생성하려 할 땐.. 어떡함?
+      - 이 땐! 새로운 값을 컴포넌트에 전달하여 새로 Element를 생성하면 됨
+      
+    - All React compoments must act like pure functions with respect to their props.
+    - 모든 리액트 컴포넌트는 Props를 직접 바꿀 수 없고, 같은 props에 대해서는 항상 같은 결과를 보여줄 것!
+    - 즉, 리액트 컴포넌트 프롭스는 바꿀 수 없고, 같은 프롭스가 들어오면 같은 결과값을 출력한다.
+      
+    (1) javascript 함수의 속성
+      - 순수 함수: 입력값을 변경하지 않으며, 같은 입력값에 대해서는 항상 같은 출력값을 리턴하는 함수
+    
+  2) Props 사용법
+    
+    *) 리액트 엘리먼트의 구조
+      ex) React.createElement(
+            type,
+            [props],
+            [...children]
+          )
+  
